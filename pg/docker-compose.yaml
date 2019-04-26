@@ -1,0 +1,17 @@
+version: "3"
+services:
+    feature-api:
+      image: checkr/flagr
+      ports: 
+      - "8081:18000"
+      environment:
+      - "FLAGR_DB_DBDRIVER=postgres"
+      - "FLAGR_DB_DBCONNECTIONSTR=host=postgres user=postgres dbname=postgres password=dalong sslmode=disable"
+    postgres:
+      image: postgres:9.6
+      ports:
+      - "5432:5432"
+      environment:
+      - "POSTGRES_PASSWORD:dalong"
+      volumes:
+      - ./db_data:/var/lib/postgresql/data

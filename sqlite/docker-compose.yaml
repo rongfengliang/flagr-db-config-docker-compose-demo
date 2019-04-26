@@ -1,0 +1,6 @@
+version: "3"
+services:
+    feature-api:
+      image: checkr/flagr
+      ports: 
+      - "8080:18000"
